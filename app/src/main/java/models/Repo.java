@@ -1,11 +1,12 @@
 package models;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * Created by deepeshnaini on 28/08/15.
  */
-public class Repo {
+public class Repo implements Serializable {
     public List<File> files;
     public List<User> users;
     public String name;
@@ -39,6 +40,9 @@ public class Repo {
         this.name = name;
     }
 
+    public Double getScore() {
+        return score;
+    }
 
     @Override
     public String toString() {

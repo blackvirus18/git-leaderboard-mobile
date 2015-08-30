@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/list_selector"
+    android:orientation="horizontal"
+    android:padding="5dip"
+    android:minHeight="60dip">
+
+
+    <TextView
+        android:id="@+id/repo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/list_image"
+        android:layout_toRightOf="@+id/list_image"
+        android:layout_centerVertical="true"
+        android:paddingBottom ="9dip"
+        android:textColor="#040404"
+        android:textSize="16dip"
+        android:textStyle="bold"
+        android:typeface="sans"
+        android:layout_marginLeft="10dip" />
+
+
+    <TextView
+        android:id="@+id/repo_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/user"
+        android:layout_alignLeft="@+id/user"
+        android:layout_alignBottom="@+id/list_image"
+        android:paddingTop="5dip"
+        android:layout_centerHorizontal="true"
+        android:textColor="#343434"
+        android:textSize="15dip" />
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ListView
+            android:id="@+id/file_list"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:divider="#b5b5b5"
+            android:dividerHeight="1dp"
+            android:listSelector="@drawable/list_selector">
+        </ListView>
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,9 +1,11 @@
 package models;
 
+import java.io.Serializable;
+
 /**
  * Created by deepeshnaini on 28/08/15.
  */
-public class File {
+public class File implements Serializable {
     public String name;
     public Double score;
 

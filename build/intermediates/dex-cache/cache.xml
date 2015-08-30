@@ -9,13 +9,6 @@
         <dex dex="/Users/deepeshnaini/Documents/mobile_code/git-leaderboard-mobile/app/build/intermediates/pre-dexed/debug/classes-eea909970d811f6c66d9f9f164c95b40d7cda20e.jar" />
     </item>
     <item
-        jar="/Users/deepeshnaini/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.0.0/support-annotations-23.0.0.jar"
-        jumboMode="false"
-        revision="23.0.0"
-        sha1="990e7f98a7bad86a40b1f0bcfeb039023afd0839">
-        <dex dex="/Users/deepeshnaini/Documents/mobile_code/git-leaderboard-mobile/app/build/intermediates/pre-dexed/debug/support-annotations-23.0.0-1b96bc59ee6a1f3a68f3dd9f52ef06261e1d4372.jar" />
-    </item>
-    <item
         jar="/Users/deepeshnaini/Documents/mobile_code/git-leaderboard-mobile/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.0/jars/libs/internal_impl-23.0.0.jar"
         jumboMode="false"
         revision="23.0.0"
@@ -28,6 +21,13 @@
         revision="23.0.0"
         sha1="4fcf0b1879f8caf497c073e1432d398e9e2988c1">
         <dex dex="/Users/deepeshnaini/Documents/mobile_code/git-leaderboard-mobile/app/build/intermediates/pre-dexed/debug/classes-5309d98ac37250d07078291af82edd9bbb1d9372.jar" />
+    </item>
+    <item
+        jar="/Users/deepeshnaini/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.0.0/support-annotations-23.0.0.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="990e7f98a7bad86a40b1f0bcfeb039023afd0839">
+        <dex dex="/Users/deepeshnaini/Documents/mobile_code/git-leaderboard-mobile/app/build/intermediates/pre-dexed/debug/support-annotations-23.0.0-1b96bc59ee6a1f3a68f3dd9f52ef06261e1d4372.jar" />
     </item>
 
 </items>

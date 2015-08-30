@@ -13,22 +13,22 @@ import com.blackvirus.deepeshnaini.go_git_leaderboard.R;
 
 import java.util.ArrayList;
 
-import models.User;
+import models.Repo;
 
 /**
  * Created by deepeshnaini on 28/08/15.
  */
-public class UserAdapter extends ArrayAdapter<User> {
+public class RepoAdapter extends ArrayAdapter<Repo> {
     private Context c;
-    public UserAdapter(Context context, ArrayList<User> users) {
-        super(context, 0,users);
+    public RepoAdapter(Context context, ArrayList<Repo> repos) {
+        super(context, 0,repos);
         c=context;
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        User user =new User();
-        user=getItem(position);
+        Repo repo =new Repo();
+        repo=getItem(position);
         if (convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_user, parent, false);
         }
@@ -42,8 +42,8 @@ public class UserAdapter extends ArrayAdapter<User> {
         TextView email= (TextView) convertView.findViewById(R.id.user);
         TextView score= (TextView) convertView.findViewById(R.id.user_score);
 
-        email.setText(user.getEmail());
-        score.setText(Double.toString(user.getScore()));
+        email.setText(repo.getName());
+        score.setText(Double.toString(repo.getScore()));
         return convertView;
     }
 }

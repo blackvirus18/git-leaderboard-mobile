@@ -1,5 +1,6 @@
 package models;
 
+import java.io.Serializable;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -8,7 +9,7 @@ import java.util.List;
 /**
  * Created by deepeshnaini on 28/08/15.
  */
-public class User {
+public class User implements Serializable {
     public String email;
     public Double score;
     public String image;

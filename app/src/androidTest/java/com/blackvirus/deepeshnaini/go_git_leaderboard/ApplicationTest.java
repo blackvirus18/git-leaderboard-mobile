@@ -1,4 +1,4 @@
-package com.example.deepeshnaini.go_git_leaderboard;
+package com.blackvirus.deepeshnaini.go_git_leaderboard;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

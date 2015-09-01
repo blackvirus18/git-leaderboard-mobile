@@ -13,6 +13,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.concurrent.ExecutionException;
 
@@ -57,7 +58,7 @@ public class RepoStatsFragment extends Fragment {
                 String repoName=iter.next();
                 ArrayList<User> users=new ArrayList<User>();
                 JSONObject repoObj= (JSONObject) jObj.get(repoName);
-                Double score= (Double) repoObj.getDouble("score");
+                Double score= (Double) repoObj.getDouble("impact");
                 Repo repo=new Repo();
                 repo.setName(repoName);
                 repo.setScore(score);
@@ -68,7 +69,7 @@ public class RepoStatsFragment extends Fragment {
                     ArrayList<File> files=new ArrayList<File>();
                     String email= (String) userIter.next();
                     JSONObject userObj= (JSONObject) usersObj.get(email);
-                    Double userScore= (Double) userObj.getDouble("score");
+                    Double userScore= (Double) userObj.getDouble("impact");
                     JSONObject filesObj= (JSONObject) userObj.get("files");
                     Iterator fileIter=filesObj.keys();
                     while (fileIter.hasNext()){
@@ -86,6 +87,7 @@ public class RepoStatsFragment extends Fragment {
                 repo.setUsers(users);
                 repos.add(repo);
             }
+            Collections.sort(repos);
             RepoAdapter repoAdapter=new RepoAdapter(getContext(), repos);
             ListView listView = (ListView) getView().findViewById(R.id.list_view);
             listView.setAdapter(repoAdapter);

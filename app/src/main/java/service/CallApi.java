@@ -31,7 +31,7 @@ public class CallApi extends AsyncTask<String, String, String> {
         InputStream in=null;
         String result=null;
         try {
-            URL url = new URL("http://10.70.210.192:4000/"+mBaseUrl);
+            URL url = new URL("http://180.179.79.246/"+mBaseUrl);
             HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
             in= new BufferedInputStream(urlConnection.getInputStream());
 
@@ -45,9 +45,6 @@ public class CallApi extends AsyncTask<String, String, String> {
 
             in.close();
             result = sBuilder.toString();
-            //System.out.println(result);
-            //JSONObject jObj = new JSONObject(result);
-            //System.out.println(jObj);
         }
         catch (Exception e){
             System.out.println(e.getMessage());

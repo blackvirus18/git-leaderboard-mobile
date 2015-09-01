@@ -13,6 +13,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.concurrent.ExecutionException;
 
@@ -22,6 +23,8 @@ import models.Repo;
 import models.User;
 import service.CallApi;
 import service.ResponseListener;
+
+import static java.util.Collections.*;
 
 public class UserStatsFragment extends Fragment {
     private ArrayList<User> users;
@@ -56,7 +59,7 @@ public class UserStatsFragment extends Fragment {
             while(iter.hasNext()){
                 String email=iter.next();
                 JSONObject userObj= (JSONObject) jObj.get(email);
-                Double score= (Double) userObj.getDouble("score");
+                Double score= (Double) userObj.getDouble("impact");
                 User user=new User();
                 user.setEmail(email);
                 user.setScore(score);
@@ -68,7 +71,7 @@ public class UserStatsFragment extends Fragment {
                     String repoName= (String) repoIter.next();
                     JSONObject repoObj=(JSONObject) reposObj.get(repoName);
                     JSONObject filesObj= (JSONObject) repoObj.get("files");
-                    Double repoScore= (Double) repoObj.getDouble("score");
+                    Double repoScore= (Double) repoObj.getDouble("impact");
                     ArrayList<File> files=new ArrayList<File>();
                     Repo repo=new Repo();
                     repo.setName(repoName);
@@ -87,6 +90,7 @@ public class UserStatsFragment extends Fragment {
                 user.setRepos(repos);
                 users.add(user);
             }
+            Collections.sort(users);
             System.out.println(users);
             UserAdapter userAdapter=new UserAdapter(getContext(), users);
             ListView listView = (ListView) getView().findViewById(R.id.list_view);

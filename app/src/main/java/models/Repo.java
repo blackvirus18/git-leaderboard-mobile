@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Created by deepeshnaini on 28/08/15.
  */
-public class Repo implements Serializable {
+public class Repo implements Serializable,Comparable<Repo> {
     public List<File> files;
     public List<User> users;
     public String name;
@@ -52,5 +52,16 @@ public class Repo implements Serializable {
                 ", name='" + name + '\'' +
                 ", score=" + score +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Repo rhs) {
+        Repo lhs=this;
+        if(lhs.getScore()<rhs.getScore())
+            return 1;
+        else if(lhs.getScore()>rhs.getScore())
+            return -1;
+        else
+            return 0;
     }
 }

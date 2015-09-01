@@ -4,12 +4,13 @@ import java.io.Serializable;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.Comparator;
 import java.util.List;
 
 /**
  * Created by deepeshnaini on 28/08/15.
  */
-public class User implements Serializable {
+public class User implements Serializable,Comparable<User> {
     public String email;
     public Double score;
     public String image;
@@ -69,5 +70,19 @@ public class User implements Serializable {
 
     public void setRepos(List<Repo> repos) {
         this.repos = repos;
+    }
+
+
+
+
+    @Override
+    public int compareTo(User rhs) {
+        User lhs=this;
+        if(lhs.getScore()<rhs.getScore())
+            return 1;
+        else if(lhs.getScore()>rhs.getScore())
+            return -1;
+        else
+            return 0;
     }
 }
